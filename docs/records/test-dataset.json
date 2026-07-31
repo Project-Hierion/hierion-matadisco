@@ -1,0 +1,23 @@
+{
+  "resource": "https://huggingface.co/datasets/QuixiAI/dolphin",
+  "publishedAt": "2023-07-01",
+  "tags": ["project-hierion", "dolphin", "instruction-tuning", "sft", "text-generation", "mit-license"],
+  "preview": {
+    "mimeType": "text/html",
+    "url": "https://huggingface.co/datasets/QuixiAI/dolphin"
+  },
+  "project-hierion": {
+    "datasetName": "dolphin",
+    "organization": "QuixiAI",
+    "authors": ["Eric Hartford"],
+    "license": "MIT",
+    "description": "An attempt to replicate Microsoft's Orca — instruction-following dataset with complex explanation traces.",
+    "source": "https://huggingface.co/datasets/QuixiAI/dolphin",
+    "originalRepo": "https://github.com/Zjh-819/LLMDataHub",
+    "size": "~4.5M rows",
+    "language": "en",
+    "format": "jsonl",
+    "attribution": "Original dataset by QuixiAI (Eric Hartford) under MIT License. Sourced from LLMDataHub.",
+    "sourceDate": "2023-07-01 (Hugging Face commit date — closest available published date for this dataset)"
+  }
+}
