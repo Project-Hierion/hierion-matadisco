@@ -1,0 +1,19 @@
+{
+  "resource": "https://project-hierion.org/#interconnectedness",
+  "publishedAt": "2026-07-31",
+  "tags": ["cadmies", "interconnectedness", "buddhism", "philosophy", "consciousness", "spirituality", "ecology"],
+  "preview": {
+    "mimeType": "text/html",
+    "url": "https://project-hierion.org/#interconnectedness"
+  },
+  "cadmies": {
+    "conceptName": "Interconnectedness",
+    "conceptId": "bafyreigjl3k4z4zgx2vlmilnyac5rrpq4wwjyu6c7t3lhtdv5ig3tr6jby",
+    "definition": "The Buddhist concept that all phenomena are interconnected and interdependent, recognizing the web of relationships that bind all existence.",
+    "coreInsight": "Understanding interdependence leads to compassion and ethical action, as the realization that harming others is ultimately harming oneself.",
+    "domains": ["Philosophy", "Consciousness", "Spirituality", "Ecology"],
+    "source": "https://project-hierion.org/#interconnectedness",
+    "attribution": "Concept from CADMIES. Published by Project Hierion.",
+    "sourceDate": "2026-07-31 (record preparation date)"
+  }
+}
