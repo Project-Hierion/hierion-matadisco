@@ -1,7 +1,8 @@
 {
+  "$type": "project-hierion.llmdatahub",
   "resource": "https://huggingface.co/datasets/QuixiAI/dolphin",
   "publishedAt": "2023-07-01",
-  "tags": ["project-hierion", "dolphin", "instruction-tuning", "sft", "text-generation", "mit-license"],
+  "tags": ["project-hierion", "dolphin", "instruction-tuning", "sft", "text-generation"],
   "preview": {
     "mimeType": "text/html",
     "url": "https://huggingface.co/datasets/QuixiAI/dolphin"
