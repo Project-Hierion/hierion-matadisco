@@ -1,5 +1,5 @@
 {
-  "$type": "project-hierion.cadmies",
+  "$type": "cx.vmx.matadisco",
   "resource": "ipfs://bafyreigjl3k4z4zgx2vlmilnyac5rrpq4wwjyu6c7t3lhtdv5ig3tr6jby",
   "publishedAt": "2026-07-31",
   "tags": ["cadmies", "interconnectedness", "buddhism", "philosophy", "consciousness", "spirituality", "ecology"],
@@ -8,6 +8,7 @@
     "url": "https://project-hierion.org/#interconnectedness"
   },
   "cadmies": {
+    "$type": "project-hierion.cadmies",
     "conceptName": "Interconnectedness",
     "conceptId": "bafyreigjl3k4z4zgx2vlmilnyac5rrpq4wwjyu6c7t3lhtdv5ig3tr6jby",
     "definition": "The Buddhist concept that all phenomena are interconnected and interdependent, recognizing the web of relationships that bind all existence.",
