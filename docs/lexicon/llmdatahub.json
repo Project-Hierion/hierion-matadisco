@@ -1,0 +1,73 @@
+{
+  "lexicon": 1,
+  "id": "project-hierion.llmdatahub",
+  "defs": {
+    "main": {
+      "type": "record",
+      "required": [
+        "datasetName",
+        "organization",
+        "authors",
+        "license",
+        "description",
+        "source",
+        "originalRepo",
+        "attribution",
+        "sourceDate"
+      ],
+      "properties": {
+        "datasetName": {
+          "type": "string",
+          "description": "Short name of the dataset (e.g., 'dolphin', 'ultrachat')"
+        },
+        "organization": {
+          "type": "string",
+          "description": "Organization that published the original dataset"
+        },
+        "authors": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "List of individual authors/creators"
+        },
+        "license": {
+          "type": "string",
+          "description": "Open license (MIT, Apache, CC-BY, etc.)"
+        },
+        "description": {
+          "type": "string",
+          "description": "Brief description of the dataset and its purpose"
+        },
+        "source": {
+          "type": "string",
+          "format": "uri",
+          "description": "Direct link to the dataset (same as resource field)"
+        },
+        "originalRepo": {
+          "type": "string",
+          "format": "uri",
+          "description": "Link to the original LLMDataHub repository"
+        },
+        "size": {
+          "type": "string",
+          "description": "Approximate size of the dataset (rows, GB, etc.)"
+        },
+        "language": {
+          "type": "string",
+          "description": "Primary language of the dataset"
+        },
+        "format": {
+          "type": "string",
+          "description": "Data format (jsonl, parquet, csv, etc.)"
+        },
+        "attribution": {
+          "type": "string",
+          "description": "Full attribution statement with credit to original creators"
+        },
+        "sourceDate": {
+          "type": "string",
+          "description": "Date the dataset was sourced, with disclaimer if approximate"
+        }
+      }
+    }
+  }
+}
