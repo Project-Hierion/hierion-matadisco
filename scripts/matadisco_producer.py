@@ -100,6 +100,16 @@ class MatadiscoProducer:
             return False
 
         # Basic validation based on Lexicon
+        if record_type == LEXICON_MATADISCO:
+            return self._validate_matadisco(record)
+        elif record_type == LEXICON_LLMDATAHUB:
+            return self._validate_llmdatahub(record)
+        elif record_type == LEXICON_CADMIES:
+            return self._validate_cadmies(record)
+        else:
+            logger.error(f"❌ Unknown Lexicon: {record_type}")
+            return False
+
     def _validate_matadisco(self, record: Dict[str, Any]) -> bool:
         """Validate basic Matadisco record."""
         required = ["resource", "publishedAt"]
