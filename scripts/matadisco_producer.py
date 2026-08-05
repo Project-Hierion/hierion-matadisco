@@ -51,18 +51,18 @@ LEXICON_CADMIES = "project-hierion.cadmies"
 class MatadiscoProducer:
     """Producer for publishing records to Matadisco."""
 
-    def __init__(self, pds_url: str, handle: str, app_password: str):
+    def __init__(self, pds_url: str, handle: str, app_password: str, dry_run: bool = False):
         self.pds_url = pds_url.rstrip("/")
         self.handle = handle
         self.app_password = app_password
-        self.session = None
+        self.dry_run = dry_run
         self.did = None
         self.access_token = None
         self.refresh_token = None
 
     def authenticate(self) -> bool:
         """Authenticate with the PDS and obtain access tokens."""
-        if DRY_RUN:
+        if self.dry_run:
             logger.info("🔍 DRY RUN: Skipping authentication")
             return True
 
@@ -160,7 +160,7 @@ class MatadiscoProducer:
 
     def publish_record(self, record: Dict[str, Any]) -> bool:
         """Publish a single record to Matadisco."""
-        if DRY_RUN:
+        if self.dry_run:
             logger.info("🔍 DRY RUN — Record preview:")
             print(json.dumps(record, indent=2))
             return True
@@ -172,11 +172,6 @@ class MatadiscoProducer:
         # Validate before publishing
         if not self.validate_record(record):
             return False
-
-        # Remove $type for actual publish (Matadisco uses its own $type)
-        # The $type is for validation, but the actual record uses cx.vmx.matadisco
-        # Wait, actually we keep $type as the Lexicon identifier
-        # The Matadisco collection handles the rest
 
         try:
             logger.info(f"📤 Publishing record...")
@@ -265,18 +260,8 @@ def main():
 
     args = parser.parse_args()
 
-    # Override DRY_RUN if set via CLI
-    global DRY_RUN
-    if args.dry_run:
-        DRY_RUN = True
-
-    if not args.validate and not args.publish:
+    if not args.validate and not args.publish and not args.dry_run:
         parser.print_help()
-        sys.exit(1)
-
-    # Validate credentials (unless dry run)
-    if not DRY_RUN and not (HANDLE and APP_PASSWORD):
-        logger.error("❌ Missing credentials. Set MATADISCO_HANDLE and MATADISCO_APP_PASSWORD in .env")
         sys.exit(1)
 
     # Load records
@@ -295,20 +280,25 @@ def main():
         logger.error("❌ No records loaded")
         sys.exit(1)
 
-    # Validate mode
+    # Validate mode (doesn't need credentials)
     if args.validate:
         logger.info(f"🔍 Validating {len(records)} record(s)...")
+        producer = MatadiscoProducer(PDS_URL, "", "", dry_run=True)
         for filepath, record in records:
             logger.info(f"📄 {filepath}")
-            producer = MatadiscoProducer(PDS_URL, HANDLE or "", APP_PASSWORD or "")
             producer.validate_record(record)
         return
 
-    # Publish mode
-    producer = MatadiscoProducer(PDS_URL, HANDLE or "", APP_PASSWORD or "")
+    # Dry run or publish mode
+    # Check credentials
+    if not HANDLE or not APP_PASSWORD:
+        logger.error("❌ Missing credentials. Set MATADISCO_HANDLE and MATADISCO_APP_PASSWORD in .env")
+        sys.exit(1)
+
+    producer = MatadiscoProducer(PDS_URL, HANDLE, APP_PASSWORD, dry_run=args.dry_run)
 
     # Authenticate (skip for dry run)
-    if not DRY_RUN:
+    if not args.dry_run:
         if not producer.authenticate():
             sys.exit(1)
 
