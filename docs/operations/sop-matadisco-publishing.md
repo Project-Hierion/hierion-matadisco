@@ -20,7 +20,7 @@ Before publishing, ensure:
 - [ ] Dataset or concept has been license-audited (see License Audit SOP)
 - [ ] Record schema matches the Lexicon definition
 - [ ] All required fields are populated
-- [ ] `$type` field references the correct Lexicon
+- [ ] `$type` fields are correctly set (top-level and custom key)
 - [ ] Resource URIs use proper format (ipfs:// or https://)
 - [ ] Attribution is complete and accurate
 - [ ] Environment variables are set (.env file)
@@ -38,7 +38,7 @@ Before publishing, ensure:
 
 1. Create JSON file in `docs/records/` or `data/` directory
 2. Include core schema fields:
-   - `$type`
+   - `$type` — Always `cx.vmx.matadisco` at the top level
    - `resource`
    - `publishedAt`
    - `tags`
@@ -46,7 +46,10 @@ Before publishing, ensure:
 3. Include custom top-level key matching your tag:
    - `project-hierion` for datasets
    - `cadmies` for concepts
-4. Validate against Lexicon schema
+4. Inside your custom key, add a `$type` field with your Lexicon ID:
+   - `project-hierion.llmdatahub` for datasets
+   - `project-hierion.cadmies` for concepts
+5. Validate against Lexicon schema
 
 ### Step 3: Schema Validation
 
@@ -54,6 +57,7 @@ Use the producer script to validate records before publishing:
 
 ```bash
 python scripts/matadisco_producer.py --validate --file docs/records/test-dataset.json
+```
 
 Step 4: Dry Run
 Run a dry-run to preview what will be published:
@@ -97,6 +101,34 @@ Document the removal
 
 Update publishing log
 
+Example Record
+json
+{
+  "$type": "cx.vmx.matadisco",
+  "resource": "https://huggingface.co/datasets/QuixiAI/dolphin",
+  "publishedAt": "2023-07-01",
+  "tags": ["project-hierion", "dolphin", "instruction-tuning", "sft", "text-generation"],
+  "preview": {
+    "mimeType": "text/html",
+    "url": "https://huggingface.co/datasets/QuixiAI/dolphin"
+  },
+  "project-hierion": {
+    "$type": "project-hierion.llmdatahub",
+    "datasetName": "dolphin",
+    "organization": "QuixiAI",
+    "authors": ["Eric Hartford"],
+    "license": "MIT",
+    "description": "An attempt to replicate Microsoft's Orca — instruction-following dataset with complex explanation traces.",
+    "source": "https://huggingface.co/datasets/QuixiAI/dolphin",
+    "originalRepo": "https://github.com/Zjh-819/LLMDataHub",
+    "size": "~4.5M rows",
+    "language": "en",
+    "format": "jsonl",
+    "attribution": "Original dataset by QuixiAI (Eric Hartford) under MIT License. Sourced from LLMDataHub.",
+    "sourceDate": "2023-07-01 (Hugging Face commit date — closest available published date for this dataset)"
+  }
+}
 Version History
 Date	Version	Changes
 2026-08-05	1.0	Initial SOP definition
+2026-08-05	1.1	Added $type field requirements and corrected example
