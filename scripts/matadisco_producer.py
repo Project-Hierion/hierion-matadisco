@@ -46,6 +46,7 @@ logger = logging.getLogger(__name__)
 COLLECTION = "cx.vmx.matadisco"
 LEXICON_LLMDATAHUB = "project-hierion.llmdatahub"
 LEXICON_CADMIES = "project-hierion.cadmies"
+LEXICON_MATADISCO = "cx.vmx.matadisco"
 
 
 class MatadiscoProducer:
