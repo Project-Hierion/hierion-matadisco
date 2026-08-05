@@ -1,5 +1,6 @@
 {
-  "resource": "https://project-hierion.org/#interconnectedness",
+  "$type": "project-hierion.cadmies",
+  "resource": "ipfs://bafyreigjl3k4z4zgx2vlmilnyac5rrpq4wwjyu6c7t3lhtdv5ig3tr6jby",
   "publishedAt": "2026-07-31",
   "tags": ["cadmies", "interconnectedness", "buddhism", "philosophy", "consciousness", "spirituality", "ecology"],
   "preview": {
