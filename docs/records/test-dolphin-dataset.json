@@ -1,5 +1,5 @@
 {
-  "$type": "project-hierion.llmdatahub",
+  "$type": "cx.vmx.matadisco",
   "resource": "https://huggingface.co/datasets/QuixiAI/dolphin",
   "publishedAt": "2023-07-01",
   "tags": ["project-hierion", "dolphin", "instruction-tuning", "sft", "text-generation"],
@@ -8,6 +8,7 @@
     "url": "https://huggingface.co/datasets/QuixiAI/dolphin"
   },
   "project-hierion": {
+    "$type": "project-hierion.llmdatahub",
     "datasetName": "dolphin",
     "organization": "QuixiAI",
     "authors": ["Eric Hartford"],
