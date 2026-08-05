@@ -204,7 +204,9 @@ class MatadiscoProducer:
                 # Retry once
                 return self.publish_record(record)
 
-            response.raise_for_status()
+            if response.status_code != 200:
+                logger.error(f"❌ Server response: {response.text}")
+                response.raise_for_status()
 
             data = response.json()
             uri = data.get("uri")
