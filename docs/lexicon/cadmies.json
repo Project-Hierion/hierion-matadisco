@@ -1,0 +1,54 @@
+{
+  "lexicon": 1,
+  "id": "project-hierion.cadmies",
+  "defs": {
+    "main": {
+      "type": "record",
+      "required": [
+        "conceptName",
+        "conceptId",
+        "definition",
+        "domains",
+        "source",
+        "attribution",
+        "sourceDate"
+      ],
+      "properties": {
+        "conceptName": {
+          "type": "string",
+          "description": "Display name of the concept"
+        },
+        "conceptId": {
+          "type": "string",
+          "description": "Unique identifier (Permanent CID or custom ID)"
+        },
+        "definition": {
+          "type": "string",
+          "description": "Concise definition of the concept"
+        },
+        "coreInsight": {
+          "type": "string",
+          "description": "The fundamental insight or key takeaway"
+        },
+        "domains": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Canonical domains the concept belongs to (max 15 domains)"
+        },
+        "source": {
+          "type": "string",
+          "format": "uri",
+          "description": "Link to the concept's location (gateway page or raw card)"
+        },
+        "attribution": {
+          "type": "string",
+          "description": "Credit statement for the concept source"
+        },
+        "sourceDate": {
+          "type": "string",
+          "description": "Date the record was prepared, with disclaimer if approximate"
+        }
+      }
+    }
+  }
+}
