@@ -1,5 +1,6 @@
 {
-  "resource": "bafyreicunstgpwqzev3aqplnsgiyftsgr3jqwpgg2wgqrmthytt4fhsb2m",
+  "$type": "project-hierion.cadmies",
+  "resource": "ipfs://bafyreicunstgpwqzev3aqplnsgiyftsgr3jqwpgg2wgqrmthytt4fhsb2m",
   "publishedAt": "2026-07-31",
   "tags": ["cadmies", "anatta", "not-self", "buddhism", "philosophy", "consciousness", "spirituality", "physics"],
   "preview": {
@@ -7,7 +8,7 @@
     "url": "https://project-hierion.org/#anatta-not-self"
   },
   "cadmies": {
-    "conceptName": "Anatta - Not Self",
+    "conceptName": "Anatta Not Self",
     "conceptId": "bafyreicunstgpwqzev3aqplnsgiyftsgr3jqwpgg2wgqrmthytt4fhsb2m",
     "definition": "The Buddhist concept that there is no permanent, unchanging self or ego; instead, self-identities are dependent on various factors and constantly changing.",
     "coreInsight": "The observation of the observer as a composed, passing phenomenon, further emphasizing the impermanence and interconnectedness of all things.",
