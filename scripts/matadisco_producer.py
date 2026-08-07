@@ -44,8 +44,8 @@ logger = logging.getLogger(__name__)
 
 # Constants
 COLLECTION = "cx.vmx.matadisco"
-LEXICON_LLMDATAHUB = "project-hierion.llmdatahub"
-LEXICON_CADMIES = "project-hierion.cadmies"
+LEXICON_LLMDATAHUB = "org.project-hierion.llmdatahub"
+LEXICON_CADMIES = "org.project-hierion.cadmies"
 LEXICON_MATADISCO = "cx.vmx.matadisco"
 
 
