@@ -1,6 +1,6 @@
 {
   "lexicon": 1,
-  "id": "project-hierion.cadmies",
+  "id": "org.project-hierion.cadmies",
   "defs": {
     "main": {
       "type": "record",
