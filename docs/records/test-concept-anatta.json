@@ -8,7 +8,7 @@
     "url": "https://project-hierion.org/#anatta-not-self"
   },
   "cadmies": {
-    "$type": "project-hierion.cadmies",
+    "$type": "org.project-hierion.cadmies",
     "conceptName": "Anatta Not Self",
     "conceptId": "bafyreicunstgpwqzev3aqplnsgiyftsgr3jqwpgg2wgqrmthytt4fhsb2m",
     "definition": "The Buddhist concept that there is no permanent, unchanging self or ego; instead, self-identities are dependent on various factors and constantly changing.",
