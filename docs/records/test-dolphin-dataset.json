@@ -8,7 +8,7 @@
     "url": "https://huggingface.co/datasets/QuixiAI/dolphin"
   },
   "project-hierion": {
-    "$type": "project-hierion.llmdatahub",
+    "$type": "org.project-hierion.llmdatahub",
     "datasetName": "dolphin",
     "organization": "QuixiAI",
     "authors": ["Eric Hartford"],
