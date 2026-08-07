@@ -1,6 +1,6 @@
 {
   "lexicon": 1,
-  "id": "project-hierion.llmdatahub",
+  "id": "org.project-hierion.llmdatahub",
   "defs": {
     "main": {
       "type": "record",
